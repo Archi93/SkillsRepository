@@ -28,7 +28,7 @@ public class SourceDao extends BaseDao {
 
     public List<Source> getAll() {
         return super.produceInTransaction(
-                session -> session.createQuery("SELECT s FROM Skill s", Source.class)
+                session -> session.createQuery("SELECT s FROM Source s", Source.class)
                         .getResultList());
     }
 }
