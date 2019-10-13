@@ -1,4 +1,5 @@
 #Repozytorium projektu SkillsCollector
+
 Repozytorium stanowi realizację projektu SkillsCollector wykorzystującego Servlety, JSP, Hibernate/JPA oraz relacyjne bazy danych.
 
 Projekt uruchamiany jest w kontenerze webowym, np. Apache Tomcat.
