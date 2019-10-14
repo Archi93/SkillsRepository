@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: abl
   Date: 13.10.2019
@@ -11,6 +11,10 @@
     <title>Footer</title>
 </head>
 <body>
-
+Artur Błaszczyk - Dzisiejsza data : <%
+                                    Date date = new Date();
+                                    date.toString();
+                                    %>
+%>
 </body>
 </html>

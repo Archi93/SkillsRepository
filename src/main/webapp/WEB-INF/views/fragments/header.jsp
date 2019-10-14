@@ -11,6 +11,11 @@
     <title>Header</title>
 </head>
 <body>
-    Autor
+<a href="/user/skills">Umiejętności użytkownika</a></br>
+<a href="/register">Rejestracja</a></br>
+<a href="/login">Logowanie</a></br>
+<a href="/logout">Wylogowanie</a></br>
+<a href="/user/sources">Źródła wiedzy</a></br>
+<a href="/user/unknow-sources">Nieznane źródła wiedzy</a></br>
 </body>
 </html>
