@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: abl
@@ -6,16 +7,34 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<html>
-<head>
-    <title>Header</title>
-</head>
-<body>
-<a href="/user/skills">Umiejętności użytkownika</a></br>
-<a href="/register">Rejestracja</a></br>
-<a href="/login">Logowanie</a></br>
-<a href="/logout">Wylogowanie</a></br>
-<a href="/user/sources">Źródła wiedzy</a></br>
-<a href="/user/unknow-sources">Nieznane źródła wiedzy</a></br>
-</body>
-</html>
+<div>
+    <ul>
+        <li>
+            <c:url var="homePageURL" value="/user/skills"/>
+            <a href="${homePageURL}">Strona główna</a>
+        </li>
+        <li>
+            <c:url var="loginURL" value="/login"/>
+            <a href="${loginURL}">Strona główna</a>
+        </li>
+        <li>
+            <c:url var="logoutURL" value="/logout"/>
+            <a href="${logoutURL}">Strona główna</a>
+        </li>
+        <li>
+            <c:url var="userSkillsURL" value="/user/skills"/>
+            <a href="${userSkillsURL}">Strona główna</a>
+        </li>
+        <li>
+            <c:url var="userSourcesURL" value="/user/sources"/>
+            <a href="${userSourcesURL}">Strona główna</a>
+        </li>
+        <li>
+            <c:url var="userUnknownSources" value="/user/unknown-sources"/>
+            <a href="${userUnknownSources}">Strona główna</a>
+        </li>
+
+
+    </ul>
+
+</div>
