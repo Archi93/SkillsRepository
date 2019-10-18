@@ -18,16 +18,30 @@
 
 
 <form action="/login" method="post">
-    Username: <input type="text" name="username" value="Username"></br>
-    Password: <input type="password" name="password" value="Password"></br>
-    First name: <input type="text" name="firstName" value="First name"></br>
-    Last name: <input type="text" name="lastName" value="Last name"></br>
-    <input type="submit" value="Zarejestruj"></br>
+<p>
+    Username: <input type="text" name="username" value="Username">
+</p>
+<p>
+    Password: <input type="password" name="password" value="Password">
+</p>
+<p>
+    First name: <input type="text" name="firstName" value="First name">
+</p>
+<p>
+    Last name: <input type="text" name="lastName" value="Last name">
+</p>
+<p>
+    <input type="submit" value="Zarejestruj">
+</p>
 
-
+<p>
     <c:if test="${error != null}">
-    <p>${error}</p>
+        <p style="color: red">
+            ${error}
+        </p>
     </c:if>
+</p>
+
 
 </form>
 <footer>

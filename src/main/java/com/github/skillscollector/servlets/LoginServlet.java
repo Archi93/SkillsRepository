@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(urlPatterns = "/register")
-public class RegistrationServlet extends HttpServlet {
-   private UserDao userDao;
+
+@WebServlet(urlPatterns = "/login")
+public class LoginServlet extends HttpServlet {
+    private UserDao userDao;
 
     @Override
     public void init() throws ServletException {
@@ -21,33 +23,31 @@ public class RegistrationServlet extends HttpServlet {
         userDao = new UserDao(sessionFactory);
     }
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/login.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("login");
+        String username = req.getParameter("username");
         String password = req.getParameter("password");
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("LastName");
 
-        Boolean isUsernameAvailable = userDao.isUsernameAvailable(username);
+        List<User> user =  userDao.getAllByUsernameAndPassword(username, password);
 
-        if(!isUsernameAvailable) {
-            req.setAttribute("error", "Nazwa użytkownika jest już zajęta");
-            req.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(req, resp);
+        if(user == null) {
+            req.setAttribute("error", "Błędny login lub hasło");
+            req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
             return;
         }
 
-        User newUser = new User();
-        newUser.setUsername(username);
-        newUser.setPassword(password);
-        newUser.setFirstName(firstName);
-        newUser.setLastName(lastName);
-        userDao.save(newUser);
+        req.getSession().invalidate();
+        req.getSession(true);
+        req.setAttribute("user", user);
+        resp.sendRedirect("/user/skills");
 
-        resp.sendRedirect("/login");
+
+
     }
 }
