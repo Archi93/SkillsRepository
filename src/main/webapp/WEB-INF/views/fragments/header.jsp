@@ -15,23 +15,23 @@
         </li>
         <li>
             <c:url var="loginURL" value="/login"/>
-            <a href="${loginURL}">Strona główna</a>
+            <a href="${loginURL}">Zaloguj</a>
         </li>
         <li>
             <c:url var="logoutURL" value="/logout"/>
-            <a href="${logoutURL}">Strona główna</a>
+            <a href="${logoutURL}">Wyloguj</a>
         </li>
         <li>
             <c:url var="userSkillsURL" value="/user/skills"/>
-            <a href="${userSkillsURL}">Strona główna</a>
+            <a href="${userSkillsURL}">Umiejętności</a>
         </li>
         <li>
             <c:url var="userSourcesURL" value="/user/sources"/>
-            <a href="${userSourcesURL}">Strona główna</a>
+            <a href="${userSourcesURL}">Źródła</a>
         </li>
         <li>
             <c:url var="userUnknownSources" value="/user/unknown-sources"/>
-            <a href="${userUnknownSources}">Strona główna</a>
+            <a href="${userUnknownSources}">Nieznane źródła</a>
         </li>
 
 
